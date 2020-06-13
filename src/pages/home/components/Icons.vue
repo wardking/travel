@@ -1,7 +1,7 @@
 <template>
   <div class="icons">
-    <swiper>
-      <swiper-slide v-for="(page,index) of pages" :key="index">
+    <swiper :options="swiperOptions">
+      <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" alt="" />
@@ -16,73 +16,29 @@
 <script>
 export default {
   name: "HomeIcons",
+  props:{
+    list:Array
+  },
   data() {
     return {
-      iconList: [
-        {
-          id: "0001",
-          imgUrl: "//s.qunarzz.com/homenode/images/touchheader/hotel.png",
-          desc: "酒店",
-        },
-        {
-          id: "0002",
-          imgUrl: "//s.qunarzz.com/homenode/images/touchheader/flight.png",
-          desc: "机票",
-        },
-        {
-          id: "0003",
-          imgUrl: "//s.qunarzz.com/homenode/images/touchheader/train.png",
-          desc: "火车票",
-        },
-        {
-          id: "0004",
-          imgUrl: "//s.qunarzz.com/homenode/images/touchheader/package.png",
-          desc: "度假",
-        },
-        {
-          id: "0005",
-          imgUrl: "//s.qunarzz.com/homenode/images/touchheader/piao.png",
-          desc: "景点门票",
-        },
-        {
-          id: "0006",
-          imgUrl:
-            "https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-          desc: "海外酒店",
-        },
-        {
-          id: "0007",
-          imgUrl:
-            "https://picbed.qunarzz.com/a36d2288f19e54562338f4d8ef986288.png",
-          desc: "低价机票",
-        },
-        {
-          id: "0008",
-          imgUrl:
-            "https://picbed.qunarzz.com/377db8cb2143aebf01869c9baad3d325.png",
-          desc: "汽车船票",
-        },
-        {
-          id: "0009",
-          imgUrl:
-            "https://picbed.qunarzz.com/1316dc82d1ce6259686d5a68880e5a9d.png",
-          desc: "攻略",
-        },
-      ]};
+      swiperOptions: {
+        autoplay:false
+      },
+    };
   },
-  computed:{
-      pages(){
-          const pages=[];
-          this.iconList.forEach((item,i)=>{
-              const page = Math.floor(i/8);
-              if(!pages[page]){
-                  pages[page] = [];
-              }
-              pages[page].push(item)
-          })
-          return pages
-      }
-  }
+  computed: {
+    pages() {
+      const pages = [];
+      this.list.forEach((item, i) => {
+        const page = Math.floor(i / 8);
+        if (!pages[page]) {
+          pages[page] = [];
+        }
+        pages[page].push(item);
+      });
+      return pages;
+    },
+  },
 };
 </script>
 
@@ -92,9 +48,8 @@ export default {
   height: 0;
   padding-bottom: 50%;
 }
-.icons{
-  margin-top: .1rem;
-
+.icons {
+  margin-top: 0.1rem;
 }
 .icon {
   position: relative;
@@ -128,7 +83,7 @@ export default {
     color: @darkTextColor;
     overflow: hidden;
     white-space: nowrap;
-    text-overflow:ellipsis
+    text-overflow: ellipsis;
   }
 }
 </style>

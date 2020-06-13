@@ -4,7 +4,7 @@
     <ul>
       <li
         class="item border-bottom"
-        v-for="item of recommendList"
+        v-for="item of list"
         :key="item.id"
       >
         <div class="item-img-wrapper">
@@ -22,40 +22,9 @@
 <script>
 export default {
   name: "HomeWeekend",
-  data() {
-    return {
-      recommendList: [
-        {
-          id: "0001",
-          imgUrl:
-            "//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg",
-          title: "马尼拉湾",
-          desc: "驾一叶扁舟，寻瓯江往事",
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/fd16ccffb2e2376ff370bda3bebebd71.jpg",
-          title: "马尼拉湾",
-          desc: "不负嵊夏好时光，泗乎太安逸",
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/c2ae82fcc9fa11fa253e5919c49bcfbf.jpg",
-          title: "马尼拉湾",
-          desc: "探访日本，一部家庭旅行画册",
-        },
-        {
-          id: "0004",
-          imgUrl:
-            "//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/5a11974656794b4715156501be10c1b7.jpg",
-          title: "马尼拉湾",
-          desc: "厦门，带娃出行与幸福同行",
-        },
-      ],
-    };
-  },
+  props:{
+    list:Array
+  }
 };
 </script>
 
@@ -64,7 +33,6 @@ export default {
   line-height: 0.8rem;
   background: #eee;
   text-indent: 0.2rem;
-  margin-top: 0.2rem;
 }
 .item {
   .item-img-wrapper {

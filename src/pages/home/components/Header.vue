@@ -7,33 +7,38 @@
       <span class="iconfont">&#xe60c;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-        城市
+    <router-link to="/city">
+      <div class="header-right">
+        {{ this.city }}
         <span class="iconfont arrow-icon">&#xe64a;</span>
-        </div>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
   name: "Header",
+  props: {
+    city: String,
+  },
 };
 </script>
 
 <style lang="less" scoped>
-@import url('~@/assets/styles/varibles');
+@import url("~@/assets/styles/varibles");
 .header {
-  height: 0.86rem;
-  line-height: 0.86rem;
+  height: @headerHeight;
+  line-height:@headerHeight;
   display: flex;
   background: @bgColor;
   color: #fff;
   .header-left {
     width: 0.64rem;
     float: left;
-    .back-icon{
-        text-align: content;
-        font-size: .4rem;
+    .back-icon {
+      text-align: content;
+      font-size: 0.4rem;
     }
   }
   .header-input {
@@ -45,15 +50,16 @@ export default {
     background: #fff;
     border-radius: 0.1rem;
     color: #ccc;
-    padding-left:.2rem ;
+    padding-left: 0.2rem;
   }
   .header-right {
     width: 1.24rem;
     float: right;
     text-align: center;
-    .arrow-icon{
-        margin-left: -.04rem;
-        font-size: .24rem;
+    color: #fff;
+    .arrow-icon {
+      margin-left: -0.04rem;
+      font-size: 0.24rem;
     }
   }
 }

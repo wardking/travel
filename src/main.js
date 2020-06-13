@@ -11,6 +11,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 Vue.config.productionTip = false
 fastClick.attach(document.body)
+require('./axios/mock')
 Vue.use(VueAwesomeSwiper)
 new Vue({
   router,
