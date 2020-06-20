@@ -9,6 +9,7 @@ import './assets/styles/border.css'
 import './assets/styles/iconfont/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
+import 'babel-polyfill' 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 require('./axios/mock')
