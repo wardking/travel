@@ -14,7 +14,7 @@
     "fastclick": "^1.0.6",
     "mockjs": "^1.1.0",
     "register-service-worker": "^1.7.1",
-    "swiper": "^5.4.2",
+    "swiper": "^6.5.1",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^2.6.7",
     "vue-router": "^3.2.0",
